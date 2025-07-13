@@ -26,9 +26,10 @@ for page in range(1, 51):
     print(f'scrapped page {page}')
     time.sleep(1)
     
-
+headers = ['title', 'price', 'instock']
 with open('books.csv', 'w', newline = '', encoding = 'utf-8') as file:
     writer= csv.writer(file)
+    writer.writerow(headers)
     writer.writerows(books_info)
 
 
